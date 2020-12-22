@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  config:
+    activate:
+      on-profile:
+server:
+  port: 8082
+
+person:
+  last-name: 123@qq.com${random.uuid} #获取随机的uuid
+  age: ${random.int} #获取随机的整数
+  boss: false
+  birthday: 2020/12/18
+  map: {k1: v1,k2: v2}
+  list:
+    - apple
+    - banana
+  dog:
+    name: ${person.last-name}大黄
+    age: 3
+    color: blue
